@@ -16,13 +16,13 @@ namespace LabNumber5
         
         public static void rollDice(int num)
         {
-            int side1, side2;
+            int side1, side2;               //Declare both side of the dice
 
-            Random r= new Random();
+            Random r= new Random();                     //Declare generator and  get both sides
             side1 = r.Next(1, num);
             side2 = r.Next(1, num);
 
-            Console.WriteLine("Side 1:" + side1);
+            Console.WriteLine("Side 1:" + side1);               //Print both sides of dice
             Console.WriteLine("Side 2:" + side2);
 
             whatDidYouRoll(side1, side2);    
@@ -30,7 +30,7 @@ namespace LabNumber5
 
         }
 
-        public static void whatDidYouRoll( int s1, int s2)
+        public static void whatDidYouRoll( int s1, int s2)          //Method to display what the user rolled
         {
 
             if (s1 == 1 && s2 == 1)
@@ -68,8 +68,8 @@ namespace LabNumber5
         }
         static void Main(string[] args)
         {
-            int sides, how_many;
-            int xx, yy = 0;
+            int sides;        //Declare value to get user input
+            int xx, yy = 0;     //Declare values for method arguments
 
             Console.WriteLine("Welcome to Grand Circus Crap Table, Ernest will be your dealer...crap dealer :)" + "/n");
             Console.WriteLine("-------------------------------------------------------");
@@ -83,9 +83,9 @@ namespace LabNumber5
             Console.WriteLine("******");*/
 
             Console.WriteLine("Enter in the number of sides for a pair of dice");
-            sides = int.Parse(Console.ReadLine());
+            sides = int.Parse(Console.ReadLine());          //Takes user input so that it cn get passed to the rollDice() method
 
-              rollDice(sides);
+              rollDice(sides);          //Calls method to roll the dice..
             
        }
     }
