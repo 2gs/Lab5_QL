@@ -70,10 +70,32 @@ namespace LabNumber5
         {
             int sides;        //Declare value to get user input
             int xx, yy = 0;     //Declare values for method arguments
+            string wana;
+            bool findOut = true;
 
-            Console.WriteLine("Welcome to Grand Circus Crap Table, Ernest will be your dealer...crap dealer :)" + "/n");
+            Console.WriteLine("Welcome to Grand Circus Crap Table, Ernest will be your dealer...crap dealer :)" + "/n" + "Do you want to continue");
             Console.WriteLine("-------------------------------------------------------");
             Console.WriteLine("-------------------------------------------------------");
+
+            while (findOut)                 //While loop to control game
+            {
+                Console.WriteLine("Do you want to play craps?" + " " + "Let me know Y or N?");
+                wana = Console.ReadLine().ToUpper();
+                if (wana == "Y")
+                {
+                    Console.WriteLine("Enter in the number of sides for a pair of dice");
+                    sides = int.Parse(Console.ReadLine());          //Takes user input so that it cn get passed to the rollDice() method
+
+                    rollDice(sides);          //Calls method to roll the dice..
+
+                }
+                else if (wana == "N")
+                {
+                    Console.WriteLine("We out..... Have a good one and dont gamble all your life unless your good!!!!");
+                    return;
+                }
+            }
+            
            /* Console.WriteLine("******" + );
             for (int i = 1; i <= 6; i++)
             {
@@ -82,11 +104,8 @@ namespace LabNumber5
 
             Console.WriteLine("******");*/
 
-            Console.WriteLine("Enter in the number of sides for a pair of dice");
-            sides = int.Parse(Console.ReadLine());          //Takes user input so that it cn get passed to the rollDice() method
 
-              rollDice(sides);          //Calls method to roll the dice..
-            
+           
        }
     }
 }
